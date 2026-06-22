@@ -200,13 +200,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px; /* Espaço para as miniaturas/ícones */
+            gap: 8px; 
             text-align: center;
         }
 
         .chamada-topo:hover {
             transform: translateY(-1px);
-            background-color: var(--marca-azul-vibrante);
         }
 
         /* Estilo comum para as miniaturas dos botões do topo */
@@ -218,44 +217,33 @@
             border: 1px solid rgba(255, 255, 255, 0.4);
         }
 
-        .chamada-topo.btn-curso-topo {
-            background-color: transparent;
-            color: #ffffff;
-            border: 1px solid #ffffff;
-        }
-
-        .chamada-topo.btn-curso-topo:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        /* --- BOTÃO CONVERSE COMIGO --- */
-        .chamada-topo.btn-desafio-topo {
-            background-color: #25D366; 
-            color: #ffffff; 
-            border: 2px solid #ffffff; 
+        /* --- NOVOS ESTILOS DOS BOTÕES DO TOPO --- */
+        .chamada-topo.btn-aconselhamento-topo {
+            background-color: #F5F5DC; 
+            color: var(--cor-principal); 
             font-weight: 800;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-            animation: pulsoDestaqueBotao 2s infinite ease-in-out;
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .chamada-topo.btn-aconselhamento-topo:hover {
+            background-color: #EAEAEA;
         }
 
-        .chamada-topo.btn-desafio-topo:hover {
-            background-color: #20ba59;
+        .chamada-topo.btn-curso-topo {
+            background-color: #93C5FD;
+            color: var(--marca-azul-vibrante);
+            font-weight: 800;
+        }
+        .chamada-topo.btn-curso-topo:hover {
+            background-color: #7DB2EC;
         }
 
         .chamada-topo.btn-mentoria-topo {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: #ffffff;
+            background-color: #FFD700;
+            color: var(--cor-profunda);
+            font-weight: 800;
         }
-
         .chamada-topo.btn-mentoria-topo:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        @keyframes pulsoDestaqueBotao {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-            70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            background-color: #E6C200;
         }
 
         /* --- SEÇÃO 1: CAPTURA DE LEADS --- */
@@ -456,15 +444,64 @@
             height: auto;
         }
 
-        /* --- FAIXA CENTRAL LIMPA --- */
-        .painel-vantagens {
+        /* --- FAIXA CENTRAL LINK DESIGN --- */
+        .painel-vantagens-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             background-color: var(--cor-principal); 
             border-radius: 16px;
-            padding: 30px;
-            min-height: 80px;
+            padding: 25px 20px;
             margin-top: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            text-align: center;
+        }
+
+        .painel-vantagens-link:hover {
+            transform: translateY(-3px);
+            background-color: var(--cor-profunda);
+        }
+
+        .painel-vantagens-link .linha-forte {
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
+
+        .painel-vantagens-link .linha-media {
+            color: #CBD5E1;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .painel-vantagens-link .linha-discreta {
+            color: #94A3B8;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        /* Botão Interno Dourado em Destaque */
+        .btn-interno-dourado {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #000000;
+            border: 2px solid #000000;
+            padding: 10px 24px;
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+            border-radius: 6px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
         }
 
         /* --- TÍTULOS --- */
@@ -915,6 +952,17 @@
             display: none;
         }
 
+        .alerta-notificacao {
+            background-color: #DCFCE7;
+            color: #15803D;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 8px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
         .aviso-comprovante {
             font-size: 12px;
             color: #15803D;
@@ -1082,9 +1130,9 @@
             </nav>
             
             <div class="botoes-topo-container">
-                <a href="https://go.hotmart.com/O105756691F?dp=1" class="chamada-topo btn-desafio-topo">
-                    <i class="fa-solid fa-comments" style="color: #FFD700; font-size: 1.1rem;"></i> 
-                    Converse comigo
+                <a href="#sessao-aconselhamento" class="chamada-topo btn-aconselhamento-topo">
+                    <img src="7.jpg" alt="Miniatura" class="miniatura-botao-topo">
+                    Aconselhamento
                 </a>
                 <a href="https://pay.hotmart.com/K105536423Y" class="chamada-topo btn-curso-topo">
                     <img src="4.jpg" alt="Miniatura Supermente" class="miniatura-botao-topo">
@@ -1102,8 +1150,8 @@
         <div class="area-restrita layout-captura">
             <div class="info-captura">
                 <h2>Baixe Grátis: E-book <span>Páginas para Inspirar</span></h2>
-                <p>Siga os dois passos abaixo de forma rápida para liberar o acesso ao seu material pedagógico imediatamente.</p>
-                <span class="detalhe-formulario">O formulário requer apenas seu nome, e-mail e número de WhatsApp(opcional) para receber nossas updates.</span>
+                <p>Siga os dois passos abaixo de forma rápida para liberar o acesso ao seu material inspiridor imediatamente.</p>
+                <span class="detalhe-formulario">O formulário requer apenas seu nome, e-mail e número de WhatsApp(opcional) para receber nossas atualizacões.</span>
                 
                 <div class="container-botoes-captura">
                     <button onclick="abrirModalForm()" class="btn-quadrado-captura btn-captura-form">
@@ -1124,16 +1172,16 @@
         
         <section id="bloco-principal" class="secao-principal">
             <div class="lado-esquerdo">
-                <h2>Converse comigo</h2>
+                <h2>Chega de se sentir perdido(a)</h2>
                 
                 <div class="wrapper-apresentacao">
-                    <img src="1.jpg" alt="Capa" class="arte-principal">
+                    <img src="4.jpg" alt="Capa" class="arte-principal">
                     <div class="texto-principal">
-                        <p>Língua Portuguesa não precisa ser uma matéria difícil de aprender. Estude certo, não perca tempo e compre o curso Português Estratégico para se destacar no meio da concorrência e conseguir a sua aprovação.</p>
+                        <p>SUPERMENTE ABSOLUTA vai lhe fazer embarcar em uma jornada de auto-conhecimento que transformará a sua vida da pedra para o ouro. Chega de procrastinar, chega de adiar sonhos e viver para agradar os outros. Através do método TP-100 iberte-se e seja dono(a) de si.</p>
                     </div>
                 </div>
                 
-                <a href="https://pay.hotmart.com/K105536423Y" class="btn-acao-vendas">Comprar Agora</a>
+                <a href="#" class="btn-acao-vendas">Comprar Agora</a>
             </div>
             
             <div class="lado-direito">
@@ -1143,7 +1191,12 @@
             </div>
         </section>
 
-        <section class="painel-vantagens"></section>
+        <a href="#sessao-aconselhamento" class="painel-vantagens-link">
+            <div class="linha-forte">Converse comigo!</div>
+            <div class="linha-media">Agende uma sessão online de aconselhamento</div>
+            <div class="linha-discreta">O atendimento será discreto e totalmente sigiloso.</div>
+            <div class="btn-interno-dourado">Clique aqui</div>
+        </a>
 
         <section id="produtos">
             <h2 class="rotulo-secao">Meus Produtos</h2>
@@ -1163,37 +1216,37 @@
                     <img src="4.jpg" alt="Supermente Absoluta" class="capa-produto">
                     <h3>Supermente Absoluta</h3>
                     <div class="valor-tag">R$ 24,90</div>
-                    <a href="https://go.hotmart.com/K105536423Y?dp=1" class="btn-acao-vendas">Comprar</a>
+                    <a href="#" class="btn-acao-vendas">Comprar</a>
                 </div>
 
                 <div class="box-oferta">
                     <img src="5.jpg" alt="Manual do Amor Maduro" class="capa-produto">
                     <h3>
                         Manual do Amor Maduro
-                        <span class="subtitulo-card">Conexão e Maturidade a 2</span>
+                        <span class="subtitulo-card">Conexão e Maturidade a dois</span>
                     </h3>
                     <div class="valor-tag">R$ 14,90</div>
-                    <a href="https://go.hotmart.com/O94195857S?dp=1" class="btn-acao-vendas">Comprar</a>
+                    <a href="#" class="btn-acao-vendas">Comprar</a>
                 </div>
 
                 <div class="box-oferta">
                     <img src="6.jpg" alt="Grupo VIP" class="capa-produto">
-                    <h3>GRUPO VIP 👑</h3>
-                    <div class="valor-tag">TRIMESTRAL: R$ 49,90</div>
-                    <div class="valor-subtag">Mensal: R$ 29,90</div>
-                    <a href="https://go.hotmart.com/O105756691F?dp=1" class="btn-acao-vendas">Entrar</a>
+                    <h3>EM BREVE!</h3>
+                    <div class="valor-tag">em breve!</div>
+                    <div class="valor-subtag">em breve!</div>
+                    <a href="#" class="btn-acao-vendas">Entrar</a>
                 </div>
 
-                <div class="box-oferta">
+                <div class="box-oferta" id="sessao-aconselhamento">
                     <img src="7.jpg" alt="Sessão de Aconselhamento" class="capa-produto">
                     <h3 style="margin-top: -10px; margin-bottom: -10px;">Sessão de Aconselhamento</h3>
                     <div class="legenda-oferta">com mentor William Queiroz</div>
                     <div class="status-vagas">Vagas Abertas e Limitadas</div>
-                    <div class="status-vagas">☆Aproveite a PROMOÇÃO ESPECIAL☆ 30% de desconto, em qualquer plano, para pagamentos via PIX. Os valores "em verde" já estão com o desconto calculado.</div>
+                    <div class="status-vagas">Essa sessão de aconselhamento online tem como finaliade proporcionar um ambiente onde você possa desabafar, chorar, libertar-se de algo que você precisa contar para alguém e sentir alívio, e receber os melhores conselhos e direcionamento de uma pessoa experiente que conhece a sua dor. para garantir sigilo total, você não precisa aparecer em tela durante a vídeochamada pelo Google Meet (a menos que queira interagir visualmente comigo.</div>
                     <div class="container-tres-botoes">
                         <a href="https://wa.me/5588994409549" target="_blank" class="btn-acao-vendas btn-info-secundario">Maiores Informações</a>
                         <div class="linha-botoes-duplos">
-                            <a href="https://go.hotmart.com/A106114140M?dp=1" class="btn-acao-vendas">Contratar via Cartão</a>
+                            <a href="#" class="btn-acao-vendas">Contratar via Cartão</a>
                             <button onclick="abrirModalPix('Sessão de Aconselhamento')" class="btn-acao-vendas">Contratar pelo PIX</button>
                         </div>
                     </div>
@@ -1208,21 +1261,21 @@
                 
                 <div class="card-multimidia">
                     <div class="player-video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/k-_LxbcJsFQ?si=54Dv_YAjpCSnY-Gy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/t7N32lDkZD4?si=FK7wUFNEiQ1y78jh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="detalhe-video">
-                        <h3>Apresentação do Curso</h3>
-                        <p>Com Mentor William Queiroz</p>
+                        <h3>Apresentação do canal Manual da Maturidade</h3>
+                        <p>Com William Queiroz</p>
                     </div>
                 </div>
 
                 <div class="card-multimidia">
                     <div class="player-video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/eB195Q1AL3w?si=mzn1xuQjqTxUuHIA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframecolocar o link de incorporacao aqui></iframe>
                     </div>
                     <div class="detalhe-video">
-                        <h3>Aula Demonstrativa</h3>
-                        <p>Sinta na prática a didática para a sua transformação.</p>
+                        <h3>EM BREVE MAIS CONTEÚDO</h3>
+                        <p>Aguarde.</p>
                     </div>
                 </div>
 
@@ -1239,7 +1292,7 @@
         </section>
 
         <section class="area-comentarios">
-            <h3 style="margin-bottom: 15px; color: var(--texto-titulo);">Espaço do Aluno</h3>
+            <h3 style="margin-bottom: 15px; color: var(--texto-titulo);">Espaço do visitante</h3>
             <p style="font-size: 13px; margin-bottom: 20px; color: var(--texto-suporte);">Deixe suas dúvidas ou depoimentos abaixo. Seu comentário passará por moderação antes de ir ao ar.</p>
             
             <form class="form-comentario" onsubmit="alert('Obrigado! Seu comentário foi enviado para moderação e aparecerá em breve.'); this.reset(); return false;">
@@ -1253,8 +1306,8 @@
 
             <div class="lista-comentarios">
                 <div class="item-comentario">
-                    <h4>Marcos Souza</h4>
-                    <p>A didática do professor William é fenomenal. Consegui entender o conteúdo de uma vez por todas!</p>
+                    <h4>Heloisa Meneses</h4>
+                    <p>A melhor coisa que fiz foi uma sessão de aconselhamento com William Queiroz. Muito profissional, atencioso, eu não precisei aparecer na camera da video chamada, mas ele estava la e me disse o que nenhum amigo ou parente teria coragem de me dizer. E eu não contaria o problema se não fosse no sigilo. só tenho a agredecer. Gratidão! </p>
                 </div>
             </div>
         </section>
@@ -1266,15 +1319,15 @@
             <div class="canais-comunicacao">
                 <a href="mailto:cursos.sene@gmail.com"><i class="fa-regular fa-envelope"></i>cursos.sene@gmail.com</a>
                 <a href="https://wa.me/5588994409549" target="_blank"><i class="fa-brands fa-whatsapp"></i>(88)99440-9549</a>
-                <a href="https://www.youtube.com/@ProfessorWilliamQueiroz" target="_blank" class="link-destacado"><i class="fa-brands fa-youtube"></i>Show de Português</a>
+                <a href=https://www.youtube.com/@ManualdaMaturidade target="_blank" class="link-destacado"><i class="fa-brands fa-youtube"></i>Manual da Maturidade</a>
             </div>
             
             <div class="perfil-instagram">
-                <a href="https://instagram.com/comigovoceaprende" target="_blank" class="link-destacado"><i class="fa-brands fa-instagram"></i> @comigovoceaprende</a>
+                <a href="https://instagram.com/comigovoceaprende" target="_blank" class="link-destacado"><i class="fa-brands fa-instagram"></i>manualdamaturidade</a>
             </div>
             
             <div class="assinatura-professor">
-                Mentor William Queiroz — <span>O seu guia prático e filosófico para a mudança.</span>
+                Manual da Maturidade — <span>O seu guia prático e filosófico para a mudança.</span>
             </div>
             
             <div class="direitos-reservados">
