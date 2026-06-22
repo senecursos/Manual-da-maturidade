@@ -21,11 +21,11 @@
         }
 
         :root {
-            --cor-principal: #0A0A0A; /* Preto Absoluto */
-            --cor-profunda: #121212;
-            --marca-ouro: #D4AF37;     /* Dourado Nobre */
-            --marca-ouro-vibrante: #AA7C11;
-            --superficie-clara: #F4F4F5; /* Grafite bem claro/cinza sofisticado */
+            --cor-principal: #0F2E1B; /* Verde Escuro Confortável */
+            --cor-profunda: #081C10;  /* Verde Ainda Mais Profundo para o Rodapé/Efeitos */
+            --marca-azul: #0B3C5D;     /* Azul Escuro Profundo para os Botões */
+            --marca-azul-vibrante: #06273F;
+            --superficie-clara: #F4F4F5; 
             --texto-titulo: #18181B;
             --texto-suporte: #71717A;
         }
@@ -56,9 +56,9 @@
 
         /* --- TOPO INSTITUCIONAL --- */
         .barra-topo {
-            background-color: #ffffff;
+            background-color: var(--cor-principal); 
             padding: 15px 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             position: fixed;
             top: 0;
             left: 0;
@@ -82,20 +82,20 @@
         .bloco-marca h1 {
             font-size: 18px;
             font-weight: 900;
-            color: var(--cor-principal);
+            color: #ffffff; 
             text-transform: uppercase;
             letter-spacing: -0.5px;
         }
 
         .bloco-marca p {
             font-size: 11px;
-            color: var(--texto-suporte);
+            color: #CBD5E1; 
             font-weight: 500;
         }
 
         .bloco-marca .tagline {
             font-size: 10px;
-            color: var(--marca-ouro);
+            color: #93C5FD; 
             font-weight: 800;
             text-transform: uppercase;
             margin-top: 2px;
@@ -108,7 +108,7 @@
 
         .menu-navegacao a {
             text-decoration: none;
-            color: var(--texto-titulo);
+            color: #ffffff; 
             font-size: 13px;
             font-weight: 600;
             margin: 0 12px;
@@ -116,7 +116,7 @@
         }
 
         .menu-navegacao a:hover {
-            color: var(--marca-ouro);
+            color: #93C5FD;
         }
 
         /* --- BARRA DE PESQUISA --- */
@@ -125,22 +125,26 @@
             align-items: center;
             position: relative;
             margin-left: 8px;
-            border-left: 1px solid #E2E8F0;
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
             padding-left: 16px;
         }
 
         .input-busca-topo {
             width: 40px;
             height: 36px;
-            background-color: var(--superficie-clara);
-            border: 1px solid #E2E8F0;
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 20px;
             padding: 0 12px 0 35px;
             font-size: 12px;
-            color: var(--texto-titulo);
+            color: #ffffff;
             outline: none;
             cursor: pointer;
             transition: width 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .input-busca-topo::placeholder {
+            color: #CBD5E1;
         }
 
         .input-busca-topo:focus,
@@ -148,25 +152,26 @@
             width: 180px;
             cursor: text;
             background-color: #ffffff;
-            border-color: var(--marca-ouro);
+            border-color: var(--marca-azul);
+            color: var(--texto-titulo);
         }
 
         .icone-busca-topo {
             position: absolute;
             left: 28px;
-            color: var(--texto-suporte);
+            color: #CBD5E1;
             font-size: 13px;
             pointer-events: none;
             transition: color 0.3s ease;
         }
 
         .input-busca-topo:focus + .icone-busca-topo {
-            color: var(--marca-ouro-vibrante);
+            color: var(--marca-azul);
         }
 
         @keyframes destaqueCard {
             0% { transform: scale(1); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
-            50% { transform: scale(1.03); border-color: var(--marca-ouro-vibrante); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+            50% { transform: scale(1.03); border-color: var(--marca-azul); box-shadow: 0 0 20px rgba(11, 60, 93, 0.4); }
             100% { transform: scale(1); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
         }
 
@@ -182,7 +187,7 @@
         }
 
         .chamada-topo {
-            background-color: var(--cor-principal);
+            background-color: var(--marca-azul);
             color: #ffffff;
             text-decoration: none;
             font-size: 11px;
@@ -192,33 +197,46 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: transform 0.2s ease, background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px; /* Espaço para as miniaturas/ícones */
             text-align: center;
         }
 
         .chamada-topo:hover {
             transform: translateY(-1px);
-            background-color: var(--cor-profundo);
+            background-color: var(--marca-azul-vibrante);
+        }
+
+        /* Estilo comum para as miniaturas dos botões do topo */
+        .miniatura-botao-topo {
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
 
         .chamada-topo.btn-curso-topo {
-            background-color: var(--cor-principal);
+            background-color: transparent;
             color: #ffffff;
-            border: 1px solid var(--marca-ouro);
+            border: 1px solid #ffffff;
+        }
+
+        .chamada-topo.btn-curso-topo:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         /* --- BOTÃO CONVERSE COMIGO --- */
         .chamada-topo.btn-desafio-topo {
             background-color: #25D366; 
             color: #ffffff; 
-            border: 2px solid var(--marca-ouro); 
+            border: 2px solid #ffffff; 
             font-weight: 800;
             box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
             animation: pulsoDestaqueBotao 2s infinite ease-in-out;
             text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
         }
 
         .chamada-topo.btn-desafio-topo:hover {
@@ -226,12 +244,12 @@
         }
 
         .chamada-topo.btn-mentoria-topo {
-            background-color: #E2E8F0;
-            color: var(--cor-principal);
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
         }
 
         .chamada-topo.btn-mentoria-topo:hover {
-            background-color: #CBD5E1;
+            background-color: rgba(255, 255, 255, 0.3);
         }
 
         @keyframes pulsoDestaqueBotao {
@@ -242,9 +260,9 @@
 
         /* --- SEÇÃO 1: CAPTURA DE LEADS --- */
         .bloco-captura {
-            background: linear-gradient(135deg, #ffffff 0%, #FFFBEB 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #F0FDF4 100%); 
             padding: 50px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            border-bottom: 1px solid rgba(15, 46, 27, 0.1);
         }
 
         .layout-captura {
@@ -260,14 +278,14 @@
 
         .info-captura h2 {
             font-size: 32px;
-            color: var(--cor-principal);
+            color: var(--texto-titulo);
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 15px;
         }
 
         .info-captura h2 span {
-            color: var(--marca-ouro-vibrante);
+            color: var(--cor-principal);
             display: inline-block;
         }
 
@@ -315,12 +333,12 @@
         }
 
         .btn-captura-form {
-            background-color: var(--cor-principal);
+            background-color: var(--texto-titulo);
             color: #ffffff;
         }
 
         .btn-captura-form:hover {
-            background-color: var(--cor-profundo);
+            background-color: #000000;
             transform: translateY(-2px);
         }
 
@@ -330,13 +348,13 @@
         }
 
         .btn-captura-resgate {
-            background-color: var(--marca-ouro);
+            background-color: var(--marca-azul); 
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 4px 15px rgba(11, 60, 93, 0.2);
         }
 
         .btn-captura-resgate:hover {
-            background-color: var(--marca-ouro-vibrante);
+            background-color: var(--marca-azul-vibrante);
             transform: translateY(-2px);
         }
 
@@ -366,14 +384,14 @@
         .secao-principal h2 {
             font-size: 44px;
             font-weight: 900;
-            color: var(--cor-principal);
+            color: var(--texto-titulo);
             line-height: 1.1;
             margin-bottom: 25px;
             letter-spacing: -1px;
         }
 
         .secao-principal h2 span {
-            color: var(--marca-ouro);
+            color: var(--cor-principal);
         }
 
         .wrapper-apresentacao {
@@ -400,7 +418,7 @@
 
         .btn-acao-vendas {
             display: inline-block;
-            background-color: var(--marca-ouro);
+            background-color: var(--marca-azul); 
             color: #ffffff;
             text-decoration: none;
             font-weight: 700;
@@ -408,7 +426,7 @@
             padding: 16px 48px;
             border-radius: 8px;
             text-transform: uppercase;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 6px 20px rgba(11, 60, 93, 0.25);
             transition: all 0.2s;
             border: none;
             cursor: pointer;
@@ -416,14 +434,14 @@
         }
 
         .btn-acao-vendas:hover {
-            background-color: var(--marca-ouro-vibrante);
+            background-color: var(--marca-azul-vibrante);
             transform: translateY(-2px);
         }
 
         .molde-foto {
             width: 330px;
             height: 330px;
-            background: linear-gradient(45deg, #FFFBEB, #ffffff);
+            background: linear-gradient(45deg, #F0FDF4, #ffffff);
             border-radius: 24px;
             position: relative;
             box-shadow: 0 20px 40px rgba(0,0,0,0.03);
@@ -440,13 +458,13 @@
 
         /* --- FAIXA CENTRAL LIMPA --- */
         .painel-vantagens {
-            background-color: var(--cor-principal);
+            background-color: var(--cor-principal); 
             border-radius: 16px;
             padding: 30px;
             min-height: 80px;
             margin-top: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-            border: 1px solid var(--marca-ouro);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* --- TÍTULOS --- */
@@ -454,7 +472,7 @@
             text-align: center;
             font-size: 28px;
             font-weight: 800;
-            color: var(--cor-principal);
+            color: var(--texto-titulo);
             margin: 80px 0 40px 0;
             position: relative;
         }
@@ -505,7 +523,7 @@
         .detalhe-video h3 {
             font-size: 14px;
             font-weight: 700;
-            color: var(--cor-principal);
+            color: var(--texto-titulo);
             margin-bottom: 6px;
         }
 
@@ -551,7 +569,7 @@
         .box-oferta h3 {
             font-size: 16px;
             font-weight: 800;
-            color: var(--cor-principal);
+            color: var(--texto-titulo);
             margin-bottom: 8px;
             min-height: 44px;
             display: flex;
@@ -590,7 +608,7 @@
         .valor-tag {
             font-size: 20px;
             font-weight: 800;
-            color: var(--cor-principal);
+            color: var(--texto-titulo);
             margin-bottom: 15px;
             margin-top: auto;
         }
@@ -641,7 +659,7 @@
 
         .btn-info-secundario {
             background-color: #E2E8F0 !important;
-            color: var(--cor-principal) !important;
+            color: var(--texto-titulo) !important;
             box-shadow: none !important;
         }
         
@@ -651,7 +669,7 @@
 
         /* --- SEÇÃO DOWNLOAD FINAL EXCLUSIVA --- */
         .secao-download-final {
-            margin-top: 80px; /* Alteração cirúrgica: Espaço adicionado para desgrudar dos vídeos */
+            margin-top: 80px; 
             margin-bottom: 80px;
             display: flex;
             justify-content: center;
@@ -659,14 +677,14 @@
         }
 
         .card-download-exclusivo {
-            background: linear-gradient(135deg, #ffffff 0%, #FFFBEB 100%);
-            border: 2px dashed var(--marca-ouro);
+            background: linear-gradient(135deg, #ffffff 0%, #F0FDF4 100%);
+            border: 2px dashed var(--cor-principal);
             border-radius: 20px;
             padding: 40px 30px;
             text-align: center;
             max-width: 600px;
             width: 100%;
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.1);
+            box-shadow: 0 15px 35px rgba(15, 46, 27, 0.05);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -675,7 +693,7 @@
 
         .card-download-exclusivo h3 {
             font-size: 24px;
-            color: var(--cor-principal);
+            color: var(--texto-titulo);
             font-weight: 800;
         }
 
@@ -727,7 +745,7 @@
 
         .btn-comentar {
             align-self: flex-end;
-            background-color: var(--cor-principal);
+            background-color: var(--texto-titulo);
             color: #ffffff;
             border: none;
             padding: 12px 24px;
@@ -744,7 +762,7 @@
 
         .item-comentario h4 {
             font-size: 14px;
-            color: var(--cor-principal);
+            color: var(--texto-titulo);
             margin-bottom: 4px;
         }
 
@@ -817,7 +835,7 @@
 
         .conteudo-modal-pix h3, .conteudo-modal-form h3 {
             font-size: 20px;
-            color: var(--cor-principal);
+            color: var(--texto-titulo);
             margin-bottom: 12px;
             font-weight: 800;
         }
@@ -862,7 +880,7 @@
         .texto-chave-pix {
             font-size: 12px;
             font-weight: 600;
-            color: var(--cor-principal);
+            color: var(--texto-titulo);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -870,7 +888,7 @@
         }
 
         .btn-copiar-chave {
-            background-color: var(--cor-principal);
+            background-color: var(--marca-azul);
             color: #ffffff;
             border: none;
             padding: 8px 14px;
@@ -883,7 +901,7 @@
         }
 
         .btn-copiar-chave:hover {
-            background-color: var(--cor-profundo);
+            background-color: var(--marca-azul-vibrante);
         }
 
         .alerta-notificacao {
@@ -909,11 +927,11 @@
 
         /* --- FOOTER --- */
         footer {
-            background-color: var(--cor-principal);
+            background-color: var(--cor-profunda); 
             color: #ffffff;
             padding: 50px 0 25px 0;
             font-size: 13px;
-            border-top: 2px solid var(--marca-ouro);
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
         }
 
         .canais-comunicacao {
@@ -934,7 +952,7 @@
         }
 
         .canais-comunicacao a:hover {
-            color: var(--marca-ouro);
+            color: #93C5FD;
         }
 
         .perfil-instagram {
@@ -957,7 +975,7 @@
         }
 
         .assinatura-professor span {
-            color: var(--marca-ouro);
+            color: #93C5FD;
         }
 
         .direitos-reservados {
@@ -970,7 +988,7 @@
         }
 
         .direitos-reservados a {
-            color: var(--marca-ouro);
+            color: #93C5FD;
             text-decoration: none;
         }
 
@@ -1068,8 +1086,14 @@
                     <i class="fa-solid fa-comments" style="color: #FFD700; font-size: 1.1rem;"></i> 
                     Converse comigo
                 </a>
-                <a href="https://pay.hotmart.com/K105536423Y" class="chamada-topo btn-curso-topo">Supermente absoluta</a>
-                <a href="#card-mentoria" class="chamada-topo btn-mentoria-topo">Manual do Amor Maduro</a>
+                <a href="https://pay.hotmart.com/K105536423Y" class="chamada-topo btn-curso-topo">
+                    <img src="4.jpg" alt="Miniatura Supermente" class="miniatura-botao-topo">
+                    Supermente absoluta
+                </a>
+                <a href="#card-mentoria" class="chamada-topo btn-mentoria-topo">
+                    <img src="5.jpg" alt="Miniatura Manual do Amor" class="miniatura-botao-topo">
+                    Manual do Amor Maduro
+                </a>
             </div>
         </div>
     </header>
@@ -1079,7 +1103,7 @@
             <div class="info-captura">
                 <h2>Baixe Grátis: E-book <span>Páginas para Inspirar</span></h2>
                 <p>Siga os dois passos abaixo de forma rápida para liberar o acesso ao seu material pedagógico imediatamente.</p>
-                <span class="detalhe-formulario">O formulário requer apenas seu nome, e-mail e número de WhatsApp(opcional) para receber nossas atualizações.</span>
+                <span class="detalhe-formulario">O formulário requer apenas seu nome, e-mail e número de WhatsApp(opcional) para receber nossas updates.</span>
                 
                 <div class="container-botoes-captura">
                     <button onclick="abrirModalForm()" class="btn-quadrado-captura btn-captura-form">
@@ -1125,10 +1149,10 @@
             <h2 class="rotulo-secao">Meus Produtos</h2>
             <div class="hub-produtos">
                 
-                <div class="box-oferta" id="ebook-vitrine" style="border: 1px solid var(--marca-ouro);">
+                <div class="box-oferta" id="ebook-vitrine" style="border: 1px solid var(--cor-principal);">
                     <img src="3.jpg" alt="Ebook Páginas para Inspirar" class="capa-produto">
                     <h3>E-book - Páginas para Inspirar</h3>
-                    <div class="valor-tag" style="color: var(--marca-ouro-vibrante); margin-top: -10px; margin-bottom: 5px;">GRÁTIS</div>
+                    <div class="valor-tag" style="color: var(--cor-principal); margin-top: -10px; margin-bottom: 5px;">GRÁTIS</div>
                     <div class="aviso-direcionamento">
                         <i class="fa-solid fa-arrow-down" style="margin-bottom: 5px; display: block; font-size: 16px;"></i>
                         Role a página até o último card. Lá você baixará o seu e-book grátis.
@@ -1165,7 +1189,7 @@
                     <h3 style="margin-top: -10px; margin-bottom: -10px;">Sessão de Aconselhamento</h3>
                     <div class="legenda-oferta">com mentor William Queiroz</div>
                     <div class="status-vagas">Vagas Abertas e Limitadas</div>
-                    <div class="status-vagas">☆Aproveite a PROMOÇÃO ESPECIAL☆ 30% de desconto, em qualquer plano, para pagamentos via PIX. Os valores "em verde" já estão com o desconto calculated.</div>
+                    <div class="status-vagas">☆Aproveite a PROMOÇÃO ESPECIAL☆ 30% de desconto, em qualquer plano, para pagamentos via PIX. Os valores "em verde" já estão com o desconto calculado.</div>
                     <div class="container-tres-botoes">
                         <a href="https://wa.me/5588994409549" target="_blank" class="btn-acao-vendas btn-info-secundario">Maiores Informações</a>
                         <div class="linha-botoes-duplos">
@@ -1207,7 +1231,7 @@
 
         <section id="bloco-download-exclusivo" class="secao-download-final">
             <div class="card-download-exclusivo">
-                <i class="fa-solid fa-cloud-arrow-down" style="font-size: 40px; color: var(--marca-ouro-vibrante);"></i>
+                <i class="fa-solid fa-cloud-arrow-down" style="font-size: 40px; color: var(--cor-principal);"></i>
                 <h3>Seu Bônus Está Pronto!</h3>
                 <p>Obrigado por se cadastrar. Clique abaixo para abrir o material completo de Páginas para Inspirar diretamente no Google Drive.</p>
                 <a href="https://drive.google.com/file/d/10_tQb24iWzN9ustfkYDZUELEhA7oWhQy/view?usp=drivesdk" target="_blank" class="btn-acao-vendas" style="padding: 16px 60px;">Acessar E-book Gratuitamente</a>
@@ -1215,7 +1239,7 @@
         </section>
 
         <section class="area-comentarios">
-            <h3 style="margin-bottom: 15px; color: var(--cor-principal);">Espaço do Aluno</h3>
+            <h3 style="margin-bottom: 15px; color: var(--texto-titulo);">Espaço do Aluno</h3>
             <p style="font-size: 13px; margin-bottom: 20px; color: var(--texto-suporte);">Deixe suas dúvidas ou depoimentos abaixo. Seu comentário passará por moderação antes de ir ao ar.</p>
             
             <form class="form-comentario" onsubmit="alert('Obrigado! Seu comentário foi enviado para moderação e aparecerá em breve.'); this.reset(); return false;">
