@@ -623,6 +623,15 @@
             margin-top: 4px;
         }
 
+        #sessao-aconselhamento {
+            background: #e0f2fe; /* Azul céu claro para destacar a imagem e o botão */
+        } 
+
+        #sessao-aconselhamento .btn-info-secundario {
+            background-color: #555555 !important; /* Cinza escuro para dar contraste */
+            color: #ffffff !important; /* Texto branco para leitura nítida */
+        }
+
         .box-oferta .legenda-oferta {
             font-size: 12px;
             color: var(--texto-suporte);
@@ -952,17 +961,6 @@
             display: none;
         }
 
-        .alerta-notificacao {
-            background-color: #DCFCE7;
-            color: #15803D;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 8px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            display: none;
-        }
-
         .aviso-comprovante {
             font-size: 12px;
             color: #15803D;
@@ -1040,52 +1038,6 @@
             text-decoration: none;
         }
 
-        /* --- BOTÃO WHATSAPP --- */
-        .wrapper-whatsapp {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 54px;
-            height: 54px;
-            z-index: 1000;
-        }
-
-        .icone-whatsapp {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: #25D366;
-            color: white;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-            text-decoration: none;
-            z-index: 2;
-        }
-
-        .wrapper-whatsapp::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #25D366;
-            border-radius: 50%;
-            z-index: 1;
-            animation: expansao-pulso 2s infinite ease-in-out;
-        }
-
-        @keyframes expansao-pulso {
-            0% { transform: scale(1); opacity: 0.8; }
-            100% { transform: scale(1.4); opacity: 0; }
-        }
-
         @media (max-width: 992px) {
             .box-oferta { width: calc(50% - 12px); }
         }
@@ -1134,11 +1086,11 @@
                     <img src="7.jpg" alt="Miniatura" class="miniatura-botao-topo">
                     Aconselhamento
                 </a>
-                <a href="https://pay.hotmart.com/K105536423Y" class="chamada-topo btn-curso-topo">
+                <a href="#supermente-absoluta" class="chamada-topo btn-curso-topo">
                     <img src="4.jpg" alt="Miniatura Supermente" class="miniatura-botao-topo">
                     Supermente absoluta
                 </a>
-                <a href="#card-mentoria" class="chamada-topo btn-mentoria-topo">
+                <a href="#manual-amor-maduro" class="chamada-topo btn-mentoria-topo">
                     <img src="5.jpg" alt="Miniatura Manual do Amor" class="miniatura-botao-topo">
                     Manual do Amor Maduro
                 </a>
@@ -1181,7 +1133,7 @@
                     </div>
                 </div>
                 
-                <a href="#" class="btn-acao-vendas">Comprar Agora</a>
+                <a href="https://go.hotmart.com/C97242668O" class="btn-acao-vendas">Comprar Agora</a>
             </div>
             
             <div class="lado-direito">
@@ -1212,14 +1164,14 @@
                     </div>
                 </div>
 
-                <div class="box-oferta">
+                <div class="box-oferta" id="supermente-absoluta">
                     <img src="4.jpg" alt="Supermente Absoluta" class="capa-produto">
                     <h3>Supermente Absoluta</h3>
                     <div class="valor-tag">R$ 24,90</div>
-                    <a href="#" class="btn-acao-vendas">Comprar</a>
+                    <a href="https://go.hotmart.com/C97242668O" class="btn-acao-vendas">Comprar</a>
                 </div>
 
-                <div class="box-oferta">
+                <div class="box-oferta" id="manual-amor-maduro">
                     <img src="5.jpg" alt="Manual do Amor Maduro" class="capa-produto">
                     <h3>
                         Manual do Amor Maduro
@@ -1229,35 +1181,43 @@
                     <a href="#" class="btn-acao-vendas">Comprar</a>
                 </div>
 
-                
-
                 <div class="box-oferta" id="sessao-aconselhamento">
                     <img src="7.jpg" alt="Sessão de Aconselhamento" class="capa-produto">
                     <h3 style="margin-top: -10px; margin-bottom: -10px;">Sessão de Aconselhamento</h3>
                     <div class="legenda-oferta">Com o Mentor William Queiroz</div>
-                    <div class="status-vagas">Vagas Abertas e Limitadas</div>
-                    <div class="status-vagas">Essa sessão de aconselhamento online tem como finaliade proporcionar um ambiente onde você possa desabafar, chorar, libertar-se de algo que você precisa contar para alguém e sentir alívio, e receber os melhores conselhos e direcionamento de uma pessoa experiente que conhece a sua dor. para garantir sigilo total, você não precisa aparecer em tela durante a vídeochamada pelo Google Meet (a menos que queira interagir visualmente comigo.</div>
+                    
+                    <div class="status-vagas">Horários disponíveis</div>
+                    <div class="legenda-oferta" style="font-size: 0.8rem; color: #000000; text-align: justify;">
+                        Essa sessão de aconselhamento online tem como finalidade proporcionar um ambiente onde você possa desabafar, chorar, libertar-se de algo que você precisa contar para alguém e sentir alívio, e receber os melhores conselhos e direcionamento de uma pessoa experiente que conhece a sua dor. Para garantir sigilo total, você não precisa aparecer em tela durante a vídeochamada pelo Google Meet (a menos que queira interagir visualmente comigo).
+                    </div>
+                    
                     <div class="container-tres-botoes">
-                        <a href="https://wa.me/5588994409549" target="_blank" class="btn-acao-vendas btn-info-secundario">Maiores Informações</a>
+                        <button onclick="document.getElementById('modalValores').style.display = 'flex';" class="btn-acao-vendas" style="width: 100%; padding: 12px 20px; font-size: 13px; font-weight: 700; text-transform: uppercase; border-radius: 8px; border: 2px solid #111111; background-color: #ffffff; color: #111111; cursor: pointer; transition: all 0.2s ease; margin-bottom: 8px;">
+                            Consulte os Valores
+                        </button>
+
+                        <a href="aconselhamento.html" class="btn-acao-vendas btn-info-secundario">Maiores Informações</a>
+
                         <div class="linha-botoes-duplos">
-                            <a href="#" class="btn-acao-vendas">Contratar via Cartão</a>
-                            <button onclick="abrirModalPix('Sessão de Aconselhamento')" class="btn-acao-vendas">Contratar pelo PIX</button>
+                            <a href="https://go.hotmart.com/C106446511I?dp=1" class="btn-acao-vendas">CONTRATAR PELO CARTÃO</a>
+                            <button onclick="abrirModalPix()" class="btn-acao-vendas">Contratar pelo PIX</button>
                         </div>
                     </div>
                 </div>
+
                 <div class="box-oferta box-oferta-destaque" id="card-socio">
                     <img src="socio.jpg" alt="Seja Meu Sócio" class="capa-produto">
                     <h3>Parceria de Alto Nível:<br>Seja meu Sócio.</h3>
                     <div class="legenda-oferta" style="text-align: justify; padding: 0 10px; font-size: 13px; color: var(--texto-titulo); line-height: 1.5; margin-bottom: 20px;">
-                        "Eu não quero apenas alunos; eu quero parceiros comprometidos em crescer comigo. Ao investir apenas R$ 50,00, você recebe o meu treinamento prático de vendas e ganha o direito de ser meu sócio, garantindo 40% de participação em cada venda do curso Português Estratégico. Eu te ensino a estratégia que uso, te dou o material de apoio e você lucra comigo. É um negócio real, testado e pronto para você começar hoje."
+                        "Eu não quero apenas alunos; eu quero parceiros comprometidos em crescer comigo. Ao investir apenas R$ 50,00, você recebe o meu treinamento prático de vendas e ganha o direito de ser meu sócio, garantindo 40% de participação em cada venda do curso Português Estratégico. Eu te ensino a estratégia que uso, te do o material de apoio e você lucra comigo. É um negócio real, testado e pronto para você começar hoje."
                     </div>
                     <div class="valor-tag">R$ 50,00</div>
                     <div class="valor-subtag">Investimento Único</div>
                     <div class="grupo-botoes-duplos">
-    <a href="https://wa.me/5588994409549" target="_blank" class="btn-acao-vendas btn-info-secundario" style="margin-bottom: 8px; margin-right: 8px;">Informações</a>
-    <a href="COLOQUE_SEU_LINK_DO_HOTMART_AQUI" class="btn-acao-vendas" style="margin-bottom: 10px;">Quero ser seu sócio agora</a>
-</div>
-
+                        <a href="seja-socio.html" class="btn-acao-vendas btn-info-secundario" style="margin-bottom: 8px; margin-right: 8px;">Informações</a>
+                        <a href="COLOQUE_SEU_LINK_DO_HOTMART_AQUI" class="btn-acao-vendas" style="margin-bottom: 10px;">Quero ser seu sócio agora</a>
+                    </div>
+                </div>
 
             </div>
         </section>
@@ -1278,7 +1238,7 @@
 
                 <div class="card-multimidia">
                     <div class="player-video">
-                        <iframecolocar o link de incorporacao aqui></iframe>
+                        <iframe width="560" height="315" src="COLOQUE_O_LINK_DE_INCORPORACAO_AQUI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="detalhe-video">
                         <h3>EM BREVE MAIS CONTEÚDO</h3>
@@ -1314,7 +1274,7 @@
             <div class="lista-comentarios">
                 <div class="item-comentario">
                     <h4>Heloisa Meneses</h4>
-                    <p>A melhor coisa que fiz foi uma sessão de aconselhamento com William Queiroz. Muito profissional, atencioso, eu não precisei aparecer na camera da video chamada, mas ele estava la e me disse o que nenhum amigo ou parente teria coragem de me dizer. E eu não contaria o problema se não fosse no sigilo. só tenho a agredecer. Gratidão! </p>
+                    <p>A melhor coisa que fiz foi uma sessão de aconselhamento com William Queiroz. Muito profissional, atencioso, eu não precisei aparecer na camera da video chamada, mas ele estava la e me disse o que nenhum amigo ou parente teria couragem de me dizer. E eu não contaria o problema se não fosse no sigilo. só tenho a agredecer. Gratidão! </p>
                 </div>
             </div>
         </section>
@@ -1324,13 +1284,14 @@
     <footer>
         <div class="area-restrita">
             <div class="canais-comunicacao">
-                <a href="mailto:cursos.sene@gmail.com"><i class="fa-regular fa-envelope"></i>cursos.sene@gmail.com</a>
-                <a href="https://wa.me/5588994409549" target="_blank"><i class="fa-brands fa-whatsapp"></i>(88)99440-9549</a>
-                <a href=https://www.youtube.com/@ManualdaMaturidade target="_blank" class="link-destacado"><i class="fa-brands fa-youtube"></i>Manual da Maturidade</a>
+                <a href="mailto:manualdamaturidade@gmail.com" class="link-destacado"><i class="fa-regular fa-envelope"></i>manualdamaturidade@gmail.com</a>
+                <a href="https://www.facebook.com/SEU_PERFIL" target="_blank" class="link-destacado"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="https://www.tiktok.com/@manualdamaturidade" target="_blank" class="link-destacado"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                <a href="https://www.youtube.com/@ManualdaMaturidade" target="_blank" class="link-destacado"><i class="fa-brands fa-youtube"></i> Manual da Maturidade</a>
             </div>
             
             <div class="perfil-instagram">
-                <a href="https://instagram.com/comigovoceaprende" target="_blank" class="link-destacado"><i class="fa-brands fa-instagram"></i>manualdamaturidade</a>
+                <a href="https://www.instagram.com/manualdamaturidade?igsh=MWJ4aWF5MGk2eWZkNg==" target="_blank" class="link-destacado"><i class="fa-brands fa-instagram"></i>manualdamaturidade</a>
             </div>
             
             <div class="assinatura-professor">
@@ -1357,7 +1318,7 @@
             </div>
             <div id="alertaSucessoPix" class="alerta-notificacao">Chave Pix copiada com sucesso!</div>
             <div class="aviso-comprovante">
-                <i class="fa-brands fa-whatsapp"></i> 1) Pague o valor referente ao plano escolhido. 2) Envie o comprovante para o nosso WhatsApp. 3) Agendaremos o início dos seus estudos.
+                <i class="fa-brands fa-whatsapp"></i> 1) Pague o valor referente ao plano escolhido. 2) Envie o comprovante para o nosso WhatsApp. 3) Agendaremos a sua sessão.
             </div>
         </div>
     </div>
@@ -1370,34 +1331,33 @@
         </div>
     </div>
 
-    <div class="wrapper-whatsapp">
-        <a href="https://wa.me/5588994409549" class="icone-whatsapp" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
+    <div id="modalValores" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(3px); align-items: center; justify-content: center;">
+        <div style="background-color: #ffffff; padding: 30px; border-radius: 12px; width: 90%; max-width: 450px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); font-family: Arial, sans-serif; position: relative;">
+            
+            <span onclick="document.getElementById('modalValores').style.display = 'none';" style="position: absolute; top: 15px; right: 20px; font-size: 28px; font-weight: bold; color: #888888; cursor: pointer;">&times;</span>
+            
+            <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 1.3rem; color: #111111; font-weight: 600; text-align: center;">Contribuição e Investimento</h3>
+            
+            <p style="margin: 0 0 20px 0; font-size: 0.95rem; color: #555555; text-align: center; font-style: italic; border-bottom: 1px solid #eeeeee; padding-bottom: 12px;">Duração de cada sessão: 1 hora</p>
+            
+            <div style="font-size: 1.05rem; color: #222222; line-height: 1.6;">
+                <p style="margin: 15px 0;">• <strong>Cartão de Crédito:</strong> R$ 110,00</p>
+                <p style="margin: 15px 0;">• <strong>À vista no PIX:</strong> R$ 80,00</p>
+                <p style="margin: 15px 0; margin-bottom: 5px;">• <strong>Combo Especial (Apenas PIX):</strong> R$ 100,00</p>
+                <p style="margin: 0 0 15px 15px; font-size: 0.9rem; color: #666666; font-style: italic;">Inclui: 1h de Sessão + Livro Manual do Amor Maduro + Livro Supermente Absoluta</p>
+            </div>
+            
+            <button onclick="document.getElementById('modalValores').style.display = 'none';" style="margin-top: 20px; width: 100%; padding: 12px; background-color: #333333; color: white; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; font-weight: bold;">Voltar ao Site</button>
+        </div>
     </div>
 
     <script>
-        function abrirModalPix(nomeProduto) {
-            document.getElementById('modalTituloProduto').innerText = nomeProduto;
+        function abrirModalPix() {
             document.getElementById('modalPix').classList.add('modal-ativo');
         }
 
         function fecharModalPix() {
             document.getElementById('modalPix').classList.remove('modal-ativo');
-            document.getElementById('alertaSucessoPix').style.display = 'none';
-        }
-
-        function copiarChavePix() {
-            const textoChave = document.getElementById('chavePixTexto').innerText;
-            navigator.clipboard.writeText(textoChave).then(() => {
-                const alerta = document.getElementById('alertaSucessoPix');
-                alerta.style.display = 'block';
-                setTimeout(() => {
-                    alerta.style.display = 'none';
-                }, 3000);
-            }).catch(err => {
-                console.error('Erro ao copiar a chave: ', err);
-            });
         }
 
         function abrirModalForm() {
@@ -1411,6 +1371,7 @@
         window.onclick = function(event) {
             const modalPix = document.getElementById('modalPix');
             const modalForm = document.getElementById('modalForm');
+
             if (event.target == modalPix) {
                 fecharModalPix();
             }
@@ -1448,8 +1409,8 @@
             let itemEncontrado = null;
 
             for (let card of cardsProdutos) {
-                const titulo = card.querySelector('h3').innerText.toLowerCase();
-                const legenda = card.querySelector('.legenda-oferta') ? card.querySelector('.legenda-oferta').innerText.toLowerCase() : '';
+                const titulo = card.querySelector('h3')?.innerText.toLowerCase() || '';
+                const legenda = card.querySelector('.legenda-oferta')?.innerText.toLowerCase() || '';
                 
                 if (titulo.includes(termoBusca) || legenda.includes(termoBusca)) {
                     itemEncontrado = card;

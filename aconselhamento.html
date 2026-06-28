@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessão de Aconselhamento - Prof. William Queiroz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --azul-principal: #0B2240;
+            --azul-profundo: #0D1B2A;
+            --marca-ciano: #00D2CE;
+            --marca-ciano-vibrante: #00B8B4;
+            --superficie-clara: #F8FAFC;
+            --texto-titulo: #1E293B;
+            --texto-suporte: #64748B;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
+        
+        body {
+            background-color: var(--superficie-clara);
+            color: var(--texto-titulo);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container-pagina {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid #E2E8F0;
+        }
+
+        .btn-voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--texto-suporte);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: color 0.2s;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .btn-voltar:hover { color: var(--azul-principal); }
+
+        h1 {
+            font-size: 28px;
+            color: var(--azul-principal);
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #E2E8F0;
+            padding-bottom: 15px;
+        }
+
+        /* Container do Vídeo Responsivo 16:9 */
+        .container-video {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            background-color: #000;
+        }
+
+        .container-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: var(--azul-principal);
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 15px;
+            color: #334155;
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        .box-destaque {
+            background-color: #F1F5F9;
+            border-left: 4px solid var(--marca-ciano);
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        .btn-fechar-pagina {
+            display: block;
+            width: 100%;
+            background-color: var(--marca-ciano);
+            color: var(--azul-principal);
+            border: none;
+            text-align: center;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 16px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(0, 210, 206, 0.2);
+            margin-top: 40px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .btn-fechar-pagina:hover {
+            background-color: var(--marca-ciano-vibrante);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-pagina">
+        <button onclick="retornarParaSite()" class="btn-voltar">
+            <i class="fa-solid fa-arrow-left"></i> Retornar para o site
+        </button>
+
+        <h1>Sessão de Aconselhamento Individual</h1>
+
+        <div class="container-video">
+            <iframe src="https://www.youtube.com/embed/LINK_DO_SEU_VIDEO?rel=0" 
+                    title="Sessão de Aconselhamento - Prof. William Queiroz" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <h3 style="font-family: 'Outfit', sans-serif; font-size: 18px; margin-top: 0; margin-bottom: 30px; color: #18181B; text-align: center;">
+            Antes de ler tudo com atenção, clique no play acima <i class="fa-solid fa-circle-up" style="color: var(--marca-ciano);"></i>. Eu quero falar com você. Só levará 1 minuto.
+        </h3>
+
+        <h2>Qual é o objetivo principal do Aconselhamento?</h2>
+        <p>O objetivo principal aqui é oferecer a você um espaço absolutamente reservado e de total confiança para você conversar comigo, desabafar e obter um conselho ou um direcionamento direto para a sua vida.</p>
+        
+        <p>Eu sei que, muitas vezes, passamos por problemas profundos — seja uma crise desgastante em uma relação amorosa, um conflito com amigos ou uma situação familiar difícil — e percebemos que não temos ninguém de confiança para conversar. Falar com quem está perto, às vezes, só traz mais julgamento ou opiniões baseadas em interesses que não são os seus.</p>
+        
+        <p>Aqui, você pode colocar para fora o que quiser, da forma que quiser. O meu papel é ouvir você com atenção total, sem te julgar em momento nenhum. Durante a nossa conversa, eu vou te fazer algumas perguntas bem objetivas que vão te ajudar a organizar o pensamento que hoje parece confuso. E, no final, eu vou te aconselhar de forma prática. A minha intenção é que, seguindo esse direcionamento, você consiga enxergar a saída e atingir um bom resultado para resolver esse problema.</p>
+
+        <h2>Como funciona o atendimento e a entrega na prática?</h2>
+        <p>Na prática, o nosso encontro funciona de forma muito tranquila e totalmente segura. Nós realizamos a conversa através de uma videochamada pelo Google Meet. É um ambiente calmo, sem correria ou aquela pressão de relógio. Se o nosso tempo previsto precisar de mais 5 ou 10 minutos para que você conclua o seu pensamento e o desabafo, não tem problema nenhum; o foco é a sua resolução.</p>
+        
+        <p>Pensando no seu total conforto, o atendimento pode ser feito de duas formas: você pode participar aparecendo na câmera e interagindo visualmente comigo ou, se preferir o anonimato absoluto, pode deixar a sua câmera desligada. Eu estarei aparecendo na tela para você, mas você pode falar comigo apenas por áudio, mantendo a sua identidade totalmente discreta. Para mim, o aconselhamento é igual à balança da justiça: equilibrado e cego. Eu não preciso ver o seu rosto ou saber quem você é para poder te ouvir e te ajudar a encontrar o equilíbrio.</p>
+        
+        <p>Em relação aos valores para a gente agendar, você tem duas opções. A primeira é a sessão avulsa de uma hora, que custa R$ 80 se for paga via Pix ou R$ 110 se você optar pelo cartão de crédito. A segunda opção é um combo especial para quem quer ir mais a fundo: por R$ 100, você tem direito à sessão de uma hora e ainda recebe o livro Supermente Absoluta e o Manual do Amor Maduro para te apoiar depois da nossa conversa. Tudo é feito no seu tempo e com o máximo de respeito à sua privacidade.</p>
+
+        <h2>O que você leva dessa sessão?</h2>
+        <p>O que você leva desse nosso encontro, acima de tudo, é o conforto, a leveza e a sensação profunda de ter desabafado com alguém que realmente te ouviu. Você sai com a certeza absoluta de que conseguiu se abrir em um espaço seguro, totalmente livre de julgamentos.</p>
+        
+        <p>Mais do que isso, você leva um conselho prático e um direcionamento direto. Se você seguir esse conselho à risca, você vai conseguir resolver o problema que está enfrentando hoje ou, no mínimo, vai entrar no trilho certo para começar a solucioná-lo.</p>
+        
+        <p>E, para complementar esse processo, você também pode levar ferramentas de leitura para continuar evoluindo depois da nossa conversa, seja através do combo ou adquirindo separadamente. Se você quiser um desenvolvimento pessoal e intelectual profundo, para se sentir liberto(a) das amarras da vida, você pode levar o livro Supermente Absoluta. Agora, se o seu foco for entender melhor a vida a dois, compreender quais relações devem ser evitadas, ou como corrigir e aprofundar o seu relacionamento atual, o Manual do Amor Maduro é o guia perfeito para te acompanhar. Você sai da sessão com as respostas que precisava e com o apoio necessário para viver com muito mais leveza.</p>
+
+        <h2>Para quem NÃO é a Sessão de Aconselhamento?</h2>
+        <p>Eu preciso ser muito transparente com você sobre para quem este trabalho não serve. A Sessão de Aconselhamento não é para quem está procurando formas de manipular o sentimento ou as decisões dos outros. Também não é para quem busca caminhos ou conselhos para enriquecer de forma superficial, ilegal ou sem se dedicar ao trabalho honesto.</p>
+        
+        <p>Esse espaço não funciona para quem não está verdadeiramente pensando em mudar de vida, e nem para pessoas que não têm respeito ou apreço pelo profissionalismo — seja pelo meu ou pelo de qualquer outra pessoa. E, acima de tudo, este aconselhamento não é para quem acha que uma fórmula mágica vai salvar a sua vida de uma hora para outra, sem que precise tomar nenhuma atitude.</p>
+        
+        <div class="box-destaque">
+            Aqui vai uma nota muito importante e especial: a direção que eu vou te passar exige atitude. Se você quer sair do estado de inércia em que se encontra hoje, você vai precisar se esforçar, vai precisar batalhar e, de fato, agir. O conselho abre o caminho, mas é a sua ação que gera o resultado.
+        </div>
+
+        <button onclick="retornarParaSite()" class="btn-fechar-pagina">Retornar para o site</button>
+    </div>
+
+    <script>
+        function retornarParaSite() {
+            if (window.history.length > 1) {
+                window.close();
+                setTimeout(function() {
+                    window.location.href = "index.html#produtos";
+                }, 100);
+            } else {
+                window.location.href = "index.html#produtos";
+            }
+        }
+    </script>
+</body>
+</html>
