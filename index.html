@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual da Maturidade - Mentor William Queiroz</title>
+
+  <link rel="icon" type="image/png" href="maturidade.jpg">
+<meta property="og:image" content="https://maturidade.senebr.com.br/maturidade.jpg">
+
+  <!-- 1. Métrica de Acessos -->
+  <script src="analytics.js"></script>
+
+  <!-- 2. Gerenciador Central de Anúncios -->
+  <script src="anuncios.js"></script>
+  
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -45,7 +55,7 @@
             background-color: var(--superficie-clara);
             color: var(--texto-titulo);
             line-height: 1.6;
-            padding-top: 165px;
+            padding-top: 0;
         }
 
         .area-restrita {
@@ -59,24 +69,27 @@
             background-color: var(--cor-principal); 
             padding: 15px 0;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
-            z-index: 100;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .barra-topo.escondida {
-            transform: translateY(-100%);
-            opacity: 0;
-            pointer-events: none;
         }
 
         .alinhamento-topo {
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .bloco-marca {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .imagem-topo {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .bloco-marca h1 {
@@ -208,7 +221,6 @@
             transform: translateY(-1px);
         }
 
-        /* Estilo comum para as miniaturas dos botões do topo */
         .miniatura-botao-topo {
             width: 20px;
             height: 20px;
@@ -217,7 +229,6 @@
             border: 1px solid rgba(255, 255, 255, 0.4);
         }
 
-        /* --- NOVOS ESTILOS DOS BOTÕES DO TOPO --- */
         .chamada-topo.btn-aconselhamento-topo {
             background-color: #F5F5DC; 
             color: var(--cor-principal); 
@@ -249,124 +260,92 @@
         /* --- SEÇÃO 1: CAPTURA DE LEADS --- */
         .bloco-captura {
             background: linear-gradient(135deg, #ffffff 0%, #F0FDF4 100%); 
-            padding: 50px 0;
+            padding: 25px 0;
             border-bottom: 1px solid rgba(15, 46, 27, 0.1);
         }
 
         .layout-captura {
             display: flex;
             align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .imagem-3x4 {
+            width: 130px;
+            height: 173px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(15, 46, 27, 0.15);
+            flex-shrink: 0;
         }
 
         .info-captura {
-            width: 100%;
-        }
-
-        .info-captura h2 {
-            font-size: 32px;
-            color: var(--texto-titulo);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
-
-        .info-captura h2 span {
-            color: var(--cor-principal);
-            display: inline-block;
-        }
-
-        .info-captura p {
-            color: var(--texto-titulo);
-            font-size: 15px;
-            margin-bottom: 8px;
-        }
-
-        .info-captura .detalhe-formulario {
-            font-size: 14px;
-            color: var(--texto-suporte);
-            margin-bottom: 25px;
-            font-weight: 500;
-            display: block;
-        }
-
-        .container-botoes-captura {
             display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-top: 15px;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
         }
 
-        .btn-quadrado-captura {
-            width: 140px;
-            height: 140px;
-            border-radius: 12px;
-            border: none;
+        .texto-baixe-ebook {
+            font-size: 20px;
+            color: var(--texto-titulo);
+            font-weight: 700;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .texto-gratis-destaque {
+            font-size: 38px;
+            font-weight: 900;
+            color: var(--cor-principal);
+            line-height: 1;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .btn-baixe-aqui-compacto {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             font-family: 'Outfit', sans-serif;
+            color: #ffffff;
+            background-color: var(--cor-principal);
+            border: 2px solid var(--cor-principal);
+            padding: 6px 16px;
+            border-radius: 6px;
             font-size: 14px;
             font-weight: 800;
             text-transform: uppercase;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 15px;
-            line-height: 1.3;
-            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            margin-top: 8px;
+            box-shadow: 0 4px 12px rgba(15, 46, 27, 0.2);
+            transition: all 0.2s ease;
         }
 
-        .btn-captura-form {
-            background-color: var(--texto-titulo);
-            color: #ffffff;
-        }
-
-        .btn-captura-form:hover {
-            background-color: #000000;
+        .btn-baixe-aqui-compacto:hover {
+            background-color: var(--cor-profunda);
+            border-color: var(--cor-profunda);
             transform: translateY(-2px);
-        }
-
-        .btn-quadrado-captura i {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .btn-captura-resgate {
-            background-color: var(--marca-azul); 
-            color: #ffffff;
-            box-shadow: 0 4px 15px rgba(11, 60, 93, 0.2);
-        }
-
-        .btn-captura-resgate:hover {
-            background-color: var(--marca-azul-vibrante);
-            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(15, 46, 27, 0.3);
         }
 
         /* --- SEÇÃO 2: VITRINE PRINCIPAL --- */
         .secao-principal {
-            padding: 60px 0;
+            padding: 50px 0 30px 0;
             display: flex;
-            flex-wrap: wrap-reverse;
+            flex-wrap: wrap;
             align-items: center;
-            scroll-margin-top: 140px;
+            scroll-margin-top: 20px;
         }
 
         .lado-esquerdo {
-            flex: 1;
-            min-width: 300px;
-            padding-right: 20px;
-        }
-
-        .lado-direito {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 100%;
         }
 
         .secao-principal h2 {
@@ -390,7 +369,7 @@
         }
 
         .arte-principal {
-            width: 170px;
+            width: 260px;
             height: auto;
             border-radius: 12px;
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
@@ -424,24 +403,6 @@
         .btn-acao-vendas:hover {
             background-color: var(--marca-azul-vibrante);
             transform: translateY(-2px);
-        }
-
-        .molde-foto {
-            width: 330px;
-            height: 330px;
-            background: linear-gradient(45deg, #F0FDF4, #ffffff);
-            border-radius: 24px;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
-        }
-
-        .imagem-mestre {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 95%;
-            height: auto;
         }
 
         /* --- FAIXA CENTRAL LINK DESIGN --- */
@@ -490,7 +451,6 @@
             margin-bottom: 12px;
         }
 
-        /* Botão Interno Dourado em Destaque */
         .btn-interno-dourado {
             display: inline-block;
             background-color: #FFD700;
@@ -510,24 +470,23 @@
             font-size: 28px;
             font-weight: 800;
             color: var(--texto-titulo);
-            margin: 80px 0 40px 0;
+            margin: 40px 0 25px 0;
             position: relative;
         }
 
-        /* --- MURAL DE VÍDEOS (2 VÍDEOS) --- */
+        /* --- MURAL DE VÍDEOS --- */
         .mural-videos {
             display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
             justify-content: center;
+            margin-bottom: 30px;
         }
 
         .card-multimidia {
             background: #ffffff;
             border-radius: 16px;
             overflow: hidden;
-            width: calc(50% - 12px);
-            min-width: 280px;
+            width: 100%;
+            max-width: 650px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             transition: transform 0.2s;
         }
@@ -555,13 +514,14 @@
 
         .detalhe-video {
             padding: 18px;
+            text-align: center;
         }
 
         .detalhe-video h3 {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 700;
             color: var(--texto-titulo);
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .detalhe-video p {
@@ -569,13 +529,13 @@
             color: var(--texto-suporte);
         }
 
-        /* --- HUB DE PRODUTOS (5 CARDS) --- */
+        /* --- HUB DE PRODUTOS --- */
         .hub-produtos {
             display: flex;
             flex-wrap: wrap;
             gap: 24px;
             justify-content: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .box-oferta {
@@ -590,7 +550,7 @@
             flex-direction: column;
             align-items: center;
             border: 1px solid rgba(0,0,0,0.03);
-            scroll-margin-top: 170px; 
+            scroll-margin-top: 30px; 
             transition: border-color 0.3s ease;
         }
 
@@ -624,12 +584,12 @@
         }
 
         #sessao-aconselhamento {
-            background: #e0f2fe; /* Azul céu claro para destacar a imagem e o botão */
+            background: #e0f2fe;
         } 
 
         #sessao-aconselhamento .btn-info-secundario {
-            background-color: #555555 !important; /* Cinza escuro para dar contraste */
-            color: #ffffff !important; /* Texto branco para leitura nítida */
+            background-color: #555555 !important;
+            color: #ffffff !important;
         }
 
         .box-oferta .legenda-oferta {
@@ -638,34 +598,12 @@
             margin-bottom: 15px;
         }
 
-        .aviso-direcionamento {
-            font-size: 14px;
-            font-weight: 700;
-            color: #E11D48;
-            background-color: #FFF1F2;
-            padding: 12px 15px;
-            border-radius: 8px;
-            border: 1px solid #FFE4E6;
-            margin-top: auto;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
         .valor-tag {
             font-size: 20px;
             font-weight: 800;
             color: var(--texto-titulo);
             margin-bottom: 15px;
             margin-top: auto;
-        }
-
-        .valor-subtag {
-            font-size: 11px;
-            color: var(--texto-suporte);
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-top: -12px;
-            margin-bottom: 15px;
         }
 
         .status-vagas {
@@ -711,42 +649,6 @@
         
         .btn-info-secundario:hover {
             background-color: #CBD5E1 !important;
-        }
-
-        /* --- SEÇÃO DOWNLOAD FINAL EXCLUSIVA --- */
-        .secao-download-final {
-            margin-top: 80px; 
-            margin-bottom: 80px;
-            display: flex;
-            justify-content: center;
-            scroll-margin-top: 170px;
-        }
-
-        .card-download-exclusivo {
-            background: linear-gradient(135deg, #ffffff 0%, #F0FDF4 100%);
-            border: 2px dashed var(--cor-principal);
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            max-width: 600px;
-            width: 100%;
-            box-shadow: 0 15px 35px rgba(15, 46, 27, 0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .card-download-exclusivo h3 {
-            font-size: 24px;
-            color: var(--texto-titulo);
-            font-weight: 800;
-        }
-
-        .card-download-exclusivo p {
-            font-size: 14px;
-            color: var(--texto-titulo);
-            max-width: 450px;
         }
 
         /* --- SISTEMA DE COMENTÁRIOS --- */
@@ -818,7 +720,7 @@
         }
 
         /* --- MODAIS --- */
-        .janela-modal-pix, .janela-modal-form {
+        .janela-modal-pix {
             position: fixed;
             top: 0;
             left: 0;
@@ -835,12 +737,12 @@
             transition: opacity 0.3s ease;
         }
 
-        .janela-modal-pix.modal-ativo, .janela-modal-form.modal-ativo {
+        .janela-modal-pix.modal-ativo {
             opacity: 1;
             pointer-events: auto;
         }
 
-        .conteudo-modal-pix, .conteudo-modal-form {
+        .conteudo-modal-pix {
             background-color: #ffffff;
             padding: 32px 24px;
             border-radius: 16px;
@@ -853,13 +755,7 @@
             transition: transform 0.3s ease;
         }
 
-        .conteudo-modal-form {
-            max-width: 580px;
-            padding: 24px 15px 15px 15px;
-        }
-
-        .janela-modal-pix.modal-ativo .conteudo-modal-pix,
-        .janela-modal-form.modal-ativo .conteudo-modal-form {
+        .janela-modal-pix.modal-ativo .conteudo-modal-pix {
             transform: scale(1);
         }
 
@@ -879,7 +775,7 @@
             color: #E11D48;
         }
 
-        .conteudo-modal-pix h3, .conteudo-modal-form h3 {
+        .conteudo-modal-pix h3 {
             font-size: 20px;
             color: var(--texto-titulo);
             margin-bottom: 12px;
@@ -1044,19 +940,18 @@
 
         @media (max-width: 768px) {
             body {
-                padding-top: 310px;
+                padding-top: 0;
             }
-            .secao-principal { flex-direction: column-reverse; text-align: center; padding-top: 40px; }
+            .secao-principal { text-align: center; padding-top: 40px; }
             .lado-esquerdo { padding-right: 0; }
             .wrapper-apresentacao { flex-direction: column; align-items: center; }
-            .molde-foto { width: 280px; height: 280px; margin-bottom: 30px; border-radius: 16px; }
+            .arte-principal { width: 100%; max-width: 260px; }
             .card-multimidia, .box-oferta { width: 100%; }
             .alinhamento-topo { flex-direction: column; gap: 12px; text-align: center; }
             .menu-navegacao { margin: 4px 0; justify-content: center; flex-wrap: wrap; gap: 8px; }
             .container-busca-topo { border-left: none; padding-left: 0; margin-left: 0; margin-top: 5px; }
             .botoes-topo-container { width: 100%; max-width: 320px; }
             .chamada-topo { padding: 12px; }
-            .container-botoes-captura { justify-content: center; }
             .linha-botoes-duplos { grid-template-columns: 1fr; }
         }
     </style>
@@ -1066,14 +961,17 @@
     <header class="barra-topo">
         <div class="area-restrita alinhamento-topo">
             <div class="bloco-marca">
-                <h1>Manual da Maturidade</h1>
-                <p>O seu guia prático e filosófico para a mudança</p>
-                <div class="tagline">Mentor William Queiroz</div>
+                <img src="2.jpg" alt="Foto Mentor William Queiroz" class="imagem-topo">
+                <div>
+                    <h1>Manual   da   Maturidade</h1>
+                    <p>O seu guia prático e filosófico para a mudança</p>
+                    <div class="tagline">Mentor William Queiroz</div>
+                </div>
             </div>
             <nav class="menu-navegacao">
                 <a href="#produtos">Produtos</a>
                 <a href="#videos">Vídeos</a>
-                <a href="#card-socio">Seja Meu Sócio</a>
+                <a href="https://escaleconcursos.senebr.com.br/#card-socio">Seja Meu Sócio</a>
                 
                 <div class="container-busca-topo">
                     <input type="text" id="campoBusca" class="input-busca-topo" placeholder="Buscar no site..." onkeydown="verificarTeclaBusca(event)">
@@ -1100,22 +998,15 @@
 
     <section id="leads" class="bloco-captura">
         <div class="area-restrita layout-captura">
+            <img src="3.jpg" alt="Capa Páginas que Inspiram" class="imagem-3x4">
+            
             <div class="info-captura">
-                <h2>Baixe Grátis: E-book <span>Páginas para Inspirar</span></h2>
-                <p>Siga os dois passos abaixo de forma rápida para liberar o acesso ao seu material inspiridor imediatamente.</p>
-                <span class="detalhe-formulario">O formulário requer apenas seu nome, e-mail e número de WhatsApp(opcional) para receber nossas atualizacões.</span>
-                
-                <div class="container-botoes-captura">
-                    <button onclick="abrirModalForm()" class="btn-quadrado-captura btn-captura-form">
-                        <i class="fa-regular fa-file-lines"></i>
-                        Primeiro<br>Preencha<br>o Formulário
-                    </button>
-
-                    <a href="#produtos" class="btn-quadrado-captura btn-captura-resgate">
-                        <i class="fa-solid fa-gift"></i>
-                        Agora<br>Resgate<br>o seu E-book
-                    </a>
-                </div>
+                <span class="texto-baixe-ebook">Baixe este<br>
+                  e-book</span>
+                <span class="texto-gratis-destaque">Grátis</span>
+                <a href="gratis.html" class="btn-baixe-aqui-compacto">
+                    Baixe aqui <i class="fa-solid fa-download"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -1129,17 +1020,11 @@
                 <div class="wrapper-apresentacao">
                     <img src="4.jpg" alt="Capa" class="arte-principal">
                     <div class="texto-principal">
-                        <p>SUPERMENTE ABSOLUTA vai lhe fazer embarcar em uma jornada de auto-conhecimento que transformará a sua vida da pedra para o ouro. Chega de procrastinar, chega de adiar sonhos e viver para agradar os outros. Através do Método TP-100 liberte-se e seja dono(a) de si.</p>
+                        <p>SUPERMENTE ABSOLUTA é um LIVRO que vai lhe fazer embarcar em uma jornada de auto-conhecimento que transformará a sua vida da pedra para o ouro. Chega de procrastinar, chega de adiar sonhos e viver para agradar os outros. Através do Método TP-100 liberte-se e seja dono(a) de si.</p>
                     </div>
                 </div>
                 
                 <a href="https://go.hotmart.com/C97242668O" class="btn-acao-vendas">Comprar Agora</a>
-            </div>
-            
-            <div class="lado-direito">
-                <div class="molde-foto">
-                    <img src="2.jpg" alt="William Queiroz" class="imagem-mestre">
-                </div>
             </div>
         </section>
 
@@ -1153,23 +1038,6 @@
         <section id="produtos">
             <h2 class="rotulo-secao">Meus Produtos</h2>
             <div class="hub-produtos">
-                
-                <div class="box-oferta" id="ebook-vitrine" style="border: 1px solid var(--cor-principal);">
-                    <img src="3.jpg" alt="Ebook Páginas para Inspirar" class="capa-produto">
-                    <h3>E-book - Páginas para Inspirar</h3>
-                    <div class="valor-tag" style="color: var(--cor-principal); margin-top: -10px; margin-bottom: 5px;">GRÁTIS</div>
-                    <div class="aviso-direcionamento">
-                        <i class="fa-solid fa-arrow-down" style="margin-bottom: 5px; display: block; font-size: 16px;"></i>
-                        Role a página até o último card. Lá você baixará o seu e-book grátis.
-                    </div>
-                </div>
-
-                <div class="box-oferta" id="supermente-absoluta">
-                    <img src="4.jpg" alt="Supermente Absoluta" class="capa-produto">
-                    <h3>Supermente Absoluta</h3>
-                    <div class="valor-tag">R$ 24,90</div>
-                    <a href="https://go.hotmart.com/C97242668O" class="btn-acao-vendas">Comprar</a>
-                </div>
 
                 <div class="box-oferta" id="manual-amor-maduro">
                     <img src="5.jpg" alt="Manual do Amor Maduro" class="capa-produto">
@@ -1205,22 +1073,6 @@
                     </div>
                 </div>
 
-                <div id="card-seja-socio">
-            
-            <div class="box-oferta" id="card-socio">
-                    <img src="socio.jpg" alt="Seja Meu Sócio" class="capa-produto">
-                    <h3>Parceria de Alto Nível:<br>Seja meu Sócio.</h3>
-                    <div class="legenda-oferta" style="text-align: justify; padding: 0 10px; font-size: 13px; color: var(--texto-titulo); line-height: 1.5; margin-bottom: 20px;">
-                        "Eu não quero apenas alunos; eu quero parceiros comprometidos em crescer comigo. Ao investir apenas R$ 50,00, você recebe o meu treinamento prático de vendas e ganha o direito de ser meu sócio, garantindo 40% de participação em cada venda do curso Português Estratégico. Eu te ensino a estratégia que uso, te do o material de apoio e você lucra comigo. É um negócio real, testado e pronto para você começar hoje."
-                    </div>
-                    <div class="valor-tag">R$ 50,00</div>
-                    <div class="valor-subtag">Investimento Único</div>
-                    <div class="grupo-botoes-duplos">
-                        <a href="seja-socio.html" class="btn-acao-vendas btn-info-secundario" style="margin-bottom: 8px; margin-right: 8px;">Informações</a>
-                        <a href="COLOQUE_SEU_LINK_DO_HOTMART_AQUI" class="btn-acao-vendas" style="margin-bottom: 10px;">Quero ser seu sócio agora</a>
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -1238,25 +1090,6 @@
                     </div>
                 </div>
 
-                <div class="card-multimidia">
-                    <div class="player-video">
-                        <iframe width="560" height="315" src="COLOQUE_O_LINK_DE_INCORPORACAO_AQUI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="detalhe-video">
-                        <h3>EM BREVE MAIS CONTEÚDO</h3>
-                        <p>Aguarde.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="bloco-download-exclusivo" class="secao-download-final">
-            <div class="card-download-exclusivo">
-                <i class="fa-solid fa-cloud-arrow-down" style="font-size: 40px; color: var(--cor-principal);"></i>
-                <h3>Seu Bônus Está Pronto!</h3>
-                <p>Obrigado por se cadastrar. Clique abaixo para abrir o material completo de Páginas para Inspirar diretamente no Google Drive.</p>
-                <a href="https://drive.google.com/file/d/1ThGarpw5oqiA51ju2eHIpkkbZ5A9SK7n/view?usp=drivesdk" target="_blank" class="btn-acao-vendas" style="padding: 16px 60px;">Acessar E-book Gratuitamente</a>
             </div>
         </section>
 
@@ -1325,14 +1158,6 @@
         </div>
     </div>
 
-    <div id="modalForm" class="janela-modal-form">
-        <div class="conteudo-modal-form">
-            <button onclick="fecharModalForm()" class="btn-fechar-modal"><i class="fa-solid fa-xmark"></i></button>
-            <h3 style="margin-bottom: 15px;">Formulário de Inscrição</h3>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeula4iwVMlykX3lAYpgEPFVMg_wht-se_Otf6qcN8HNEzTvA/viewform?embedded=true" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0" style="display:block; border:none; border-radius: 8px;">Carregando formulário...</iframe>
-        </div>
-    </div>
-
     <div id="modalValores" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(3px); align-items: center; justify-content: center;">
         <div style="background-color: #ffffff; padding: 30px; border-radius: 12px; width: 90%; max-width: 450px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); font-family: Arial, sans-serif; position: relative;">
             
@@ -1362,40 +1187,27 @@
             document.getElementById('modalPix').classList.remove('modal-ativo');
         }
 
-        function abrirModalForm() {
-            document.getElementById('modalForm').classList.add('modal-ativo');
-        }
-
-        function fecharModalForm() {
-            document.getElementById('modalForm').classList.remove('modal-ativo');
+        function copiarChavePix() {
+            const chave = document.getElementById('chavePixTexto').innerText;
+            
+            navigator.clipboard.writeText(chave).then(() => {
+                const alerta = document.getElementById('alertaSucessoPix');
+                alerta.style.display = 'block';
+                
+                setTimeout(() => {
+                    alerta.style.display = 'none';
+                }, 3000);
+            }).catch(err => {
+                console.error('Erro ao copiar a chave Pix: ', err);
+            });
         }
 
         window.onclick = function(event) {
             const modalPix = document.getElementById('modalPix');
-            const modalForm = document.getElementById('modalForm');
-
             if (event.target == modalPix) {
                 fecharModalPix();
             }
-            if (event.target == modalForm) {
-                fecharModalForm();
-            }
         }
-
-        window.addEventListener('scroll', function() {
-            const barraTopo = document.querySelector('.barra-topo');
-            const secaoPrincipal = document.getElementById('bloco-principal');
-            
-            if (barraTopo && secaoPrincipal) {
-                const gatilhoSumir = secaoPrincipal.offsetTop;
-                
-                if (window.scrollY >= (gatilhoSumir - 140)) { 
-                    barraTopo.classList.add('escondida');
-                } else {
-                    barraTopo.classList.remove('escondida');
-                }
-            }
-        });
 
         function verificarTeclaBusca(event) {
             if (event.key === 'Enter') {
@@ -1403,7 +1215,7 @@
             }
         }
 
-        function ejecutarBuscaNoSite() {
+        function executarBuscaNoSite() {
             const termoBusca = document.getElementById('campoBusca').value.toLowerCase().trim();
             if (termoBusca === "") return;
 
@@ -1421,7 +1233,7 @@
             }
 
             if (itemEncontrado) {
-                const topoCard = itemEncontrado.getBoundingClientRect().top + window.scrollY - 160;
+                const topoCard = itemEncontrado.getBoundingClientRect().top + window.scrollY - 30;
                 
                 window.scrollTo({
                     top: topoCard,
